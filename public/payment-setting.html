@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="css/payments.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Payment Methods</h1>
+        <form id="payment-form">
+            <div class="payment-option">
+                <input type="radio" id="debit-card" name="payment" value="debit-card" checked>
+                <label for="debit-card">Debit Card</label>
+            </div>
+            <div class="payment-details" id="debit-card-details">
+                <label for="debit-card-number">Card Number:</label>
+                <input type="text" id="debit-card-number" placeholder="1234 5678 9012 3456">
+                <label for="debit-card-expiry">Expiry Date:</label>
+                <input type="text" id="debit-card-expiry" placeholder="MM/YY">
+                <label for="debit-card-cvv">CVV:</label>
+                <input type="text" id="debit-card-cvv" placeholder="123">
+            </div>
+
+            <div class="payment-option">
+                <input type="radio" id="credit-card" name="payment" value="credit-card">
+                <label for="credit-card">Credit Card</label>
+            </div>
+            <div class="payment-details" id="credit-card-details" style="display: none;">
+                <label for="credit-card-number">Card Number:</label>
+                <input type="text" id="credit-card-number" placeholder="1234 5678 9012 3456">
+                <label for="credit-card-expiry">Expiry Date:</label>
+                <input type="text" id="credit-card-expiry" placeholder="MM/YY">
+                <label for="credit-card-cvv">CVV:</label>
+                <input type="text" id="credit-card-cvv" placeholder="123">
+            </div>
+
+            <div class="payment-option">
+                <input type="radio" id="net-banking" name="payment" value="net-banking">
+                <label for="net-banking">Net Banking</label>
+            </div>
+            <div class="payment-details" id="net-banking-details" style="display: none;">
+                <label for="bank-account">Account Number:</label>
+                <input type="text" id="bank-account" placeholder="1234567890">
+                <label for="bank-otp">OTP:</label>
+                <input type="text" id="bank-otp" placeholder="Enter OTP">
+            </div>
+
+            <div class="payment-option">
+                <input type="radio" id="upi" name="payment" value="upi">
+                <label for="upi">UPI</label>
+            </div>
+            <div class="payment-details" id="upi-details" style="display: none;">
+                <label for="upi-id">UPI ID:</label>
+                <input type="text" id="upi-id" placeholder="yourname@bank">
+            </div>
+
+            <button type="submit">Pay Now</button>
+        </form>
+
+      
+    </div>
+
+    <script>
+        // JavaScript for showing payment details based on the selected payment option
+        document.querySelectorAll('input[name="payment"]').forEach((input) => {
+            input.addEventListener('change', (event) => {
+                document.querySelectorAll('.payment-details').forEach((details) => {
+                    details.style.display = 'none';
+                });
+                document.getElementById(`${event.target.value}-details`).style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

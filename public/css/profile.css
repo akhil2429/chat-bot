@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); /* Vibrant gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars from appearing due to animations */
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.menu-bar {
+    display: flex;
+    align-items: center;
+}
+
+.bars {
+    font-size: 24px; /* Reduced size for better fit */
+    cursor: pointer;
+}
+
+.chatbox-title {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+}
+
+.profile-container {
+    max-width: 400px; /* Adjusted for a more compact profile card */
+    margin: 0 auto; /* Center horizontally */
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Floating shadow effect */
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Initial flat view */
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    position: relative;
+    z-index: 1;
+    /* Adding perspective to parent for better 3D effect */
+    perspective: 1000px;
+    background: linear-gradient(135deg, #f6d365, #fda085); /* Vibrant background for card */
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    z-index: -1;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    transition: all 0.3s ease;
+}
+
+.profile-container:hover {
+    transform: perspective(1000px) rotateX(15deg) rotateY(-15deg); /* Bend back on hover */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.profile-container:hover::before {
+    top: -25px;
+    right: -25px;
+    bottom: -25px;
+    left: -25px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make the image rounded */
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-icon:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-header h2 {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-info {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#logout-button {
+    background-color: #ff4e50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px; /* Rounded button */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#logout-button:hover {
+    background-color: #e73c3c;
+    transform: translateY(-5px); /* Lift button on hover */
+}

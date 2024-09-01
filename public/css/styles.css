@@ -1,0 +1,304 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;/* Space between bars icon and chatbot title */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    border-bottom: 4px solid black; /* Black strip below the header */
+}
+
+.chatbox-title{
+    flex: 1; /* Ensure the title takes up available space */
+    text-align: center;
+    color: #fff;
+}
+
+.menu-bar {
+    display: flex;
+    align-items: center;
+
+}
+
+.bars {
+    font-size: 36px;
+    cursor: pointer;
+    
+}
+
+#mode-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    
+}
+
+.side-menu {
+    position: fixed;
+    top: 7%;
+    left: -250px;
+    width: 250px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    transition: left 0.3s;
+    overflow-y: auto;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 40%;
+}
+
+.side-menu li {
+    margin: 15px 0;
+}
+
+.side-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    flex: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fbc2eb, #a6c0fe);
+}
+
+.chat-container {
+    width: 100%;
+    height: 100%;
+    max-height: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: url("image.jpg");
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.message {
+    margin: 10px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message.bot {
+    justify-content: flex-start;
+    max-width: 600px;
+}
+
+.message img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 8px;
+    display: block;
+    margin-top: 5px;
+}
+
+.message-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+
+.message-text {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.message.user .message-text {
+    background-color: #e1ffc7;
+}
+
+.message.bot .message-text {
+    background-color: #f4f4f4;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #f4f4f4;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#send-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode #mode-toggle {
+    color: #e0e0e0;
+}
+
+body.dark-mode .side-menu {
+    background: linear-gradient(135deg, #2a2a2a, #3c3c3c);
+}
+
+body.dark-mode main {
+    background: linear-gradient(135deg, #333, #666);
+}
+
+body.dark-mode .chat-container {
+    background-color: #242424;
+}
+
+body.dark-mode .chat-input {
+    background-color: #333;
+}
+
+body.dark-mode .message-text {
+    background-color: #444;
+    color: black;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+/* Ensure that chat messages appear as clean paragraphs */
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: #e1ffc7;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background-color: #f4f4f4;
+}
+
+.message-text {
+    margin: 0;
+    padding: 5px;
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+}
+
+/* Styling for images if any */
+.message img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 8px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Add user and bot icons */
+.message.user .message-icon {
+    content: url('path/to/user-icon.png'); /* Replace with actual path */
+}
+
+.message.bot .message-icon {
+    content: url('path/to/bot-icon.png'); /* Replace with actual path */
+}
+.message-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+.message img {
+    max-width: 300px; /* Display the uploaded image in a smaller size */
+    max-height: 300px;
+    border-radius: 8px;
+    display: block;
+    margin-top: 5px;
+}
+/* Style for the attachment icon */
+.attachment-icon {
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Style for the uploaded image in the chat */
+.image-upload{
+    max-width: 300px; /* Adjust the size as needed */
+    max-height: 200px;
+    border-radius: 8px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Ensure proper styling for user and bot message icons */
+.message-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+
+}
+#chat-box img {
+    max-width: 10%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 1500px;
+}

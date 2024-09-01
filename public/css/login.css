@@ -1,0 +1,129 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fbc2eb, #a6c0fe);
+}
+
+/* Animated Background */
+.login-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    animation: backgroundAnimation 15s infinite alternate;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: bottom right;
+    }
+}
+
+/* Login Box */
+.login-box {
+    background: rgba(255, 255, 255, 0.25); /* Transparent background with blur */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    backdrop-filter: blur(15px); /* Additional blur effect */
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.login-box:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.35); /* Slightly less transparent on hover */
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    color: white;
+    transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #a6c0fe;
+    background: rgba(255, 255, 255, 0.15);
+    color: #333;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    left: 5px;
+    color: #a6c0fe;
+    font-size: 14px;
+}
+
+/* Login Button */
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Toggle Form Link */
+.toggle-form {
+    margin-top: 20px;
+    color: white;
+}
+
+.toggle-form a {
+    color: #a6c0fe;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.toggle-form a:hover {
+    color: #fbc2eb;
+}

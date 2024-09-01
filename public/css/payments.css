@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fbc2eb, #a6c0fe);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.payment-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.payment-option {
+    margin: 10px 0;
+
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.payment-details {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f4f4f4;
+}
+
+.payment-details label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.payment-details input[type="text"] {
+    width: 97%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .payment-container {
+    background-color: #242424;
+}
+
+body.dark-mode button[type="submit"] {
+    background-color: #4CAF50;
+}
+
+body.dark-mode button[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+body.dark-mode .payment-details {
+    background-color: #333;
+}
+
+body.dark-mode .recent-payments li {
+    background: #333;
+}
